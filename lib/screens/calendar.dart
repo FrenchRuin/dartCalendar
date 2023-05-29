@@ -1,5 +1,4 @@
 import 'package:dpj/utils/utils.dart';
-import 'package:dpj/widgets/bottom_navi.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -70,23 +69,22 @@ class _HomeScreenState extends State<Calendar> {
         ),
         calendarStyle: const CalendarStyle(
           tableBorder: TableBorder(
-            top: BorderSide(color: Colors.brown),
-            right: BorderSide(color: Colors.black),
-            bottom: BorderSide(color: Colors.green),
-            left: BorderSide(color: Colors.red),
+            // top: BorderSide(color: Colors.brown),
+            // right: BorderSide(color: Colors.black),
+            // bottom: BorderSide(color: Colors.green),
+            // left: BorderSide(color: Colors.red),
             // calendar 의 내부 가로선
-            horizontalInside: BorderSide(color: Colors.lightBlue),
+            // horizontalInside: BorderSide(color: Colors.lightBlue),
             // calendar 의 내부 세로선
-            verticalInside: BorderSide(color: Colors.orange),
+            // verticalInside: BorderSide(color: Colors.orange),
             borderRadius: BorderRadius.zero,
           ),
           weekendTextStyle: TextStyle(
-            color: Color(0xff5a5a5a),
+            color: Colors.red,
           ),
           weekendDecoration: BoxDecoration(shape: BoxShape.circle),
         ),
       ),
-      bottomNavigationBar: const BottomNavi(),
     );
   }
 }

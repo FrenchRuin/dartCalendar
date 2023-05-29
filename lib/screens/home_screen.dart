@@ -1,4 +1,5 @@
 import 'package:dpj/screens/calendar.dart';
+import 'package:dpj/screens/my_setting.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -9,15 +10,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const String _title = "Flutter Calendar";
-  int curIdx = 0;
+  int curIdx = 1;
+
+  List bodyItem = [
+    const Text("News"),
+    const Calendar(),
+    const MySetting(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(_title),
-      ),
       body: Center(
         child: bodyItem.elementAt(curIdx),
       ),
@@ -30,20 +33,16 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
+            icon: Icon(Icons.newspaper),
+            label: 'News',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.music_note),
-            label: 'Music',
+            icon: Icon(Icons.calendar_month_outlined),
+            label: 'Calendar',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.apps),
-            label: 'Apps',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
+            icon: Icon(Icons.person),
+            label: 'My',
           ),
         ],
         //selected된 item color
@@ -54,15 +53,8 @@ class _HomeScreenState extends State<HomeScreen> {
         showUnselectedLabels: true,
         //BottomNavigationBar Type -> fixed = bottom item size고정
         //BottomNavigationBar Type -> shifting = bottom item selected 된 item이 확대
-        type: BottomNavigationBarType.shifting,
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
 }
-
-List bodyItem = [
-  const Calendar(),
-  const Text("music"),
-  const Text("apps"),
-  const Text("settings"),
-];
